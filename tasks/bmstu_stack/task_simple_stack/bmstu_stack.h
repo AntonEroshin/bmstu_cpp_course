@@ -77,4 +77,19 @@ class stack
 		return n_data;
 	}
 };
+void test_topreturn()
+{
+    stack<int> s;
+    s.push(42);
+    int& ref = s.top();
+    ref = 100;
+    if (s.top() != 100)
+    {
+        throw std::logic_error("top() returns not reference");
+    }
+    if (&ref != &s.top())
+    {
+        throw std::logic_error("top() returns reference to another object");
+    }
+}
 }  // namespace bmstu
