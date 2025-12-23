@@ -3,7 +3,7 @@
 #include <exception>
 #include <iostream>
 #include <utility>
-
+#include <cassert>
 namespace bmstu
 {
 template <typename T>
@@ -54,9 +54,9 @@ class stack
 		if(empty()){
 			throw std::underflow_error("Stack is empty");
 		}
-		
-		return data_[size_-1]; }
 
+		return data_[size_-1]; }
+		
 	const T& top() const { 
 		if(empty()){
 			throw std::underflow_error("Stack is empty");
